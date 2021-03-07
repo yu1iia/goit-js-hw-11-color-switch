@@ -33,9 +33,11 @@ const timer = {
       let i = randomIntegerFromInterval(min, max);
       refs.body.style.backgroundColor = colors[i];
     }, 1000);
+    refs.startBtn.setAttribute("disabled", "disabled");
   },
   stop() {
     clearInterval(this.switchColors);
+    refs.startBtn.removeAttribute("disabled");
     this.isActive = false;
   },
 };
